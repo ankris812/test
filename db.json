@@ -16,25 +16,11 @@
         "date":"01/01/2000",
         "type":"blog",
         "include":"false"
-      },      
-      "page1":{
-        "title":"Title",
-        "content":"Hello World!",
-        "date":"01/01/2001",
-        "type":"blog",
-        "include":"false"
       },
-      "blog1":{
+      "blogsample":{
         "title":"Blog Post",
         "content":"Hello World! Blog it.",
         "date":"01/01/2000",
-        "type":"blog",
-        "include":"false"
-      },
-       "blog2":{
-        "title":"Blog Post",
-        "content":"Hello World! Blog it.",
-        "date":"02/01/2000",
         "type":"blog",
         "include":"false"
       }

@@ -34,9 +34,7 @@ function loadpage(){
     }
     var menu="";
     for(var key in db.pages){
-      if(db.pages[key].include=="true"){
-        menu+="<a href='https://"+db.user+".github.io/"+db.repo+"/?"+key+"'>"+db.pages[key].title+"</a>";
-      }  
+      menu+="<a href='https://"+db.user+".github.io/"+db.repo+"/?"+key+"'>"+db.pages[key].title+"</a>";
     }
     c=document.getElementsByClassName("menu");
     for(var i=0;i<c.length;i++){
@@ -50,18 +48,7 @@ function loadpage(){
     for(var i=0;i<c.length;i++){
             c[i].innerHTML="<div id='gibboneditor' style='width:80%;margin-left:10%;text-align:center;background-color:#3e3f42;padding:20px;box-sizing:border-box;border-radius:15px;'><input id='gibbontitle' type='text' placeholder='Title' style='width:35%;border-radius:15px;padding:1vmin;'><input id='gibbonpat' type='text'placeholder='Personal Access Token' style='width:35%;border-radius:15px;padding:1vmin;'><select id='gibbontype'><option value='page'>Page</option><option value='blog'>Blog</option><option value='hidden'>Hidden</option></select><div style='padding-left:10px;padding-right:10px;margin-top:10px;margin-bottom:10px;text-align:left;display:inline-block;vertical-align:middle;background-color:#acadaf;border-radius:10vmin;'><img src='icons/bold.png' onclick='insert(&quot;<b></b>&quot;);' title='Bold'><img src='icons/italic.png' onclick='insert(&quot;<i></i>&quot;);' title='Italic'><img src='icons/underline.png' onclick='insert(&quot;<u></u>&quot;);' title='Underline'><img src='icons/title.png' onclick='insert(&quot;\n<h1></h1>&quot;);' title='Insert Header'><img src='icons/ul.png' onclick='insert(&quot;\n<ul>\n<li></li>\n</ul>&quot;);' title='Bulleted List'><img src='icons/ol.png' onclick='insert(&quot;\n<ol>\n<li></li>\n</ol>&quot;);' title='Numbered List'><img src='icons/addphoto.png' onclick='insert(&quot;\n<img>&quot;);' title='Insert Image'><img src='icons/attatchment.png' onclick='insert(&quot;\n<a></a>&quot;);' class='menu' title='Insert Link'></div><div style='padding-left:10px;padding-right:10px;margin-top:10px;margin-bottom:10px;text-align:left;display:inline-block;vertical-align:middle;background-color:#acadaf;border-radius:10vmin;'><img src='icons/uploadmedia.png' onclick='uploadmedia();' class='menu' title='Upload Media'><img src='icons/save.png' onclick='savepage();' class='menu' title='Save Changes'></div><textarea id='gibboncontent' rows='15' style='width:100%;padding:1vmin;border-radius:15px;'></textarea><br></div>";
     }
-  }else if(page=="blog"){
-    c=document.getElementsByClassName("content");
-    var blogout="";
-    for(var i=0;i<c.length;i++){
-      for(var j in db.pages){
-        if(db.pages[j].type=="blog"){
-          blogout+="<div class='blog-entry'>"+db.pages[j].title+"</div>";
-        }  
-      }  
-      c[i].innerHTML="<div id='gibboneditor' style='width:80%;margin-left:10%;text-align:center;background-color:#3e3f42;padding:20px;box-sizing:border-box;border-radius:15px;'><input id='gibbontitle' type='text' placeholder='Title' style='width:35%;border-radius:15px;padding:1vmin;'><input id='gibbonpat' type='text'placeholder='Personal Access Token' style='width:35%;border-radius:15px;padding:1vmin;'><select id='gibbontype'><option value='page'>Page</option><option value='blog'>Blog</option><option value='hidden'>Hidden</option></select><div style='padding-left:10px;padding-right:10px;margin-top:10px;margin-bottom:10px;text-align:left;display:inline-block;vertical-align:middle;background-color:#acadaf;border-radius:10vmin;'><img src='icons/bold.png' onclick='insert(&quot;<b></b>&quot;);' title='Bold'><img src='icons/italic.png' onclick='insert(&quot;<i></i>&quot;);' title='Italic'><img src='icons/underline.png' onclick='insert(&quot;<u></u>&quot;);' title='Underline'><img src='icons/title.png' onclick='insert(&quot;\n<h1></h1>&quot;);' title='Insert Header'><img src='icons/ul.png' onclick='insert(&quot;\n<ul>\n<li></li>\n</ul>&quot;);' title='Bulleted List'><img src='icons/ol.png' onclick='insert(&quot;\n<ol>\n<li></li>\n</ol>&quot;);' title='Numbered List'><img src='icons/addphoto.png' onclick='insert(&quot;\n<img>&quot;);' title='Insert Image'><img src='icons/attatchment.png' onclick='insert(&quot;\n<a></a>&quot;);' class='menu' title='Insert Link'></div><div style='padding-left:10px;padding-right:10px;margin-top:10px;margin-bottom:10px;text-align:left;display:inline-block;vertical-align:middle;background-color:#acadaf;border-radius:10vmin;'><img src='icons/uploadmedia.png' onclick='uploadmedia();' class='menu' title='Upload Media'><img src='icons/save.png' onclick='savepage();' class='menu' title='Save Changes'></div><textarea id='gibboncontent' rows='15' style='width:100%;padding:1vmin;border-radius:15px;'></textarea><br></div>";
-    }                 
-  }else{        
+  }else{
     if(page in db.pages){
       var c=document.getElementsByClassName("site-title");
       for(var i=0;i<c.length;i++){
