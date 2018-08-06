@@ -1,4 +1,4 @@
-
+var sha="";
 var getdb=new XMLHttpRequest();
 getdb.onreadystatechange=function(){
   if(this.readyState==4&&this.status==200){
@@ -13,7 +13,13 @@ savedb.onreadystatechange=function(){
 
   }
 };
-
+var getsha=new XMLHttpRequest();
+  getsha.onreadystatechange=function() {
+  if(this.readyState==4&&this.status==200){
+			sha=this.responseText.sha;
+   }
+};
+  
 var page=window.location.search.slice(1);
 if(page==""){
   page="index";
@@ -22,8 +28,12 @@ var db={};
 getdb.open("GET","db.json",true);
 getdb.send();
 function loadpage(){
-  document.title=db.title;
+	 document.title=db.title;
   if(page=="admin"){
+ 			var url="https://api.github.com/repos/"+db.user+"/"+db.repo+"/contents/db.json;
+	 		getsha.open("GET",url, true);
+  		getsha.send();
+ 
     var c=document.getElementsByClassName("site-title");
     for(var i=0;i<c.length;i++){
       c[i].innerHTML=db.title;
@@ -122,10 +132,10 @@ function savepage(){
   var type=document.getElementById("gibbontype").value;
   var include="true";
   var pat=document.getElementById("gibbonpat").value;
-  var args={"path":"db.json","message":"Updated from Gibbon CMS","content":db};
+  var args={"path":"db.json","message":"Updated from Gibbon CMS","content","sha":sha};
   var url="https://api.github.com/repos/"+db.user+"/"+db.repo+"/contents/db.json?access_token="+pat;
 
-  savedb.open("PUT","db.json",true);
+  savedb.open("PUT",url,true);
   savedb.send(JSON.stringify(args));
 }
 
