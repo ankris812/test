@@ -30,9 +30,9 @@ getdb.send();
 function loadpage(){
 	 document.title=db.title;
   if(page=="admin"){
- 			var url="https://api.github.com/repos/"+db.user+"/"+db.repo+"/contents/db.json;
-	 		getsha.open("GET",url, true);
-  		getsha.send();
+ 	var url="https://api.github.com/repos/"+db.user+"/"+db.repo+"/contents/db.json";
+	getsha.open("GET",url, true);
+  	getsha.send();
  
     var c=document.getElementsByClassName("site-title");
     for(var i=0;i<c.length;i++){
