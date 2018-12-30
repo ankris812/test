@@ -30,10 +30,17 @@ getdb.send();
 function loadpage(){
 	 document.title=db.title;
   if(page=="admin"){
+<<<<<<< HEAD
  			var url="https://api.github.com/repos/"+db.user+"/"+db.repo+"/contents/db.json";
 	 		getsha.open("GET",url, true);
   		getsha.send();
 
+=======
+ 	var url="https://api.github.com/repos/"+db.user+"/"+db.repo+"/contents/db.json";
+	getsha.open("GET",url, true);
+  	getsha.send();
+
+>>>>>>> 1e9c09f3e91105099be9d010ac5d63d7f7585bd1
     var c=document.getElementsByClassName("site-title");
     for(var i=0;i<c.length;i++){
       c[i].innerHTML=db.title;
