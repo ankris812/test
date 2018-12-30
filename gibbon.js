@@ -1,3 +1,11 @@
+/**
+ * Gibbon CMS
+ * V1.0
+ * This file covers all necessay functions for editing and updating Gibbon DB
+ *
+ */
+
+
 console.log("Gibbon CMS V1.0");
 var sha="";
 var getdb=new XMLHttpRequest();
@@ -63,30 +71,58 @@ function loadpage(){
     }
   }else{
     if(page in db.pages){
-      var c=document.getElementsByClassName("site-title");
-      for(var i=0;i<c.length;i++){
-        c[i].innerHTML=db.title;
+      if(page=="success"){
+        var c=document.getElementsByClassName("site-title");
+        for(var i=0;i<c.length;i++){
+          c[i].innerHTML=db.title;
+        }
+        c=document.getElementsByClassName("title");
+        for(var i=0;i<c.length;i++){
+          c[i].innerHTML="Successful Update";
+        }
+        var menu="";
+        for(var key in db.pages){
+          menu+="<a href='https://"+db.user+".github.io/"+db.repo+"/?"+key+"'>"+db.pages[key].title+"</a>";
+        }
+        c=document.getElementsByClassName("menu");
+        for(var i=0;i<c.length;i++){
+          c[i].innerHTML=menu;
+        }
+        c=document.getElementsByClassName("date");
+        for(var i=0;i<c.length;i++){
+          c[i].innerHTML="";
+        }
+        c=document.getElementsByClassName("content");
+        for(var i=0;i<c.length;i++){
+          c[i].innerHTML="You have successfully updated your content";
+        }
+      }else{
+        var c=document.getElementsByClassName("site-title");
+        for(var i=0;i<c.length;i++){
+          c[i].innerHTML=db.title;
+        }
+        c=document.getElementsByClassName("title");
+        for(var i=0;i<c.length;i++){
+          c[i].innerHTML=db.pages[page].title;
+        }
+        var menu="";
+        for(var key in db.pages){
+          menu+="<a href='https://"+db.user+".github.io/"+db.repo+"/?"+key+"'>"+db.pages[key].title+"</a>";
+        }
+        c=document.getElementsByClassName("menu");
+        for(var i=0;i<c.length;i++){
+          c[i].innerHTML=menu;
+        }
+        c=document.getElementsByClassName("date");
+        for(var i=0;i<c.length;i++){
+          c[i].innerHTML=db.pages[page].date;
+        }
+        c=document.getElementsByClassName("content");
+        for(var i=0;i<c.length;i++){
+          c[i].innerHTML=db.pages[page].content;
+        }
       }
-      c=document.getElementsByClassName("title");
-      for(var i=0;i<c.length;i++){
-        c[i].innerHTML=db.pages[page].title;
-      }
-      var menu="";
-      for(var key in db.pages){
-        menu+="<a href='https://"+db.user+".github.io/"+db.repo+"/?"+key+"'>"+db.pages[key].title+"</a>";
-      }
-      c=document.getElementsByClassName("menu");
-      for(var i=0;i<c.length;i++){
-        c[i].innerHTML=menu;
-      }
-      c=document.getElementsByClassName("date");
-      for(var i=0;i<c.length;i++){
-        c[i].innerHTML=db.pages[page].date;
-      }
-      c=document.getElementsByClassName("content");
-      for(var i=0;i<c.length;i++){
-        c[i].innerHTML=db.pages[page].content;
-      }
+
     }else{
       var c=document.getElementsByClassName("site-title");
       for(var i=0;i<c.length;i++){
@@ -142,12 +178,13 @@ function savepage(){
   db.pages[page].date=today;
   db.pages[page].type=type;
   db.pages[page].include=include;
-	
+
   var args={"path":"db.json","message":"Updated from Gibbon CMS","content":btoa(JSON.stringify(db)),"sha":sha};
   var url="https://api.github.com/repos/"+db.user+"/"+db.repo+"/contents/db.json?access_token="+pat;
 
   savedb.open("PUT",url,true);
   savedb.send(JSON.stringify(args));
+  window.open("/?success");
 }
 
 function uploadmedia(){
