@@ -164,7 +164,7 @@ function loadpage(){
 }
 
 function selectPage(key){
-  document.getElementById("gibbontitle")=db.pages[key].title;
+  document.getElementById("gibbontitle").value=db.pages[key].title;
 }
 
 
