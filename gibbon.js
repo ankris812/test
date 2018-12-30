@@ -174,12 +174,12 @@ function savepage(){
   var include="true";
   var pat=document.getElementById("gibbonpat").value;
 
-  db.pages[page]={};
-  db.pages[page].title=id;
-  db.pages[page].content=content;
-  db.pages[page].date=today;
-  db.pages[page].type=type;
-  db.pages[page].include=include;
+  db.pages[id]={};
+  db.pages[id].title=page;
+  db.pages[id].content=content;
+  db.pages[id].date=today;
+  db.pages[id].type=type;
+  db.pages[id].include=include;
 
   var args={"path":"db.json","message":"Updated from Gibbon CMS","content":btoa(JSON.stringify(db)),"sha":sha};
   var url="https://api.github.com/repos/"+db.user+"/"+db.repo+"/contents/db.json?access_token="+pat;
