@@ -79,7 +79,6 @@ function loadpage(){
       el.value=opt;
       select.appendChild(el);
     }
-​
   }else{
 
     if(page=="success"){
