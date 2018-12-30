@@ -12,7 +12,8 @@ var getdb=new XMLHttpRequest();
 getdb.onreadystatechange=function(){
   if(this.readyState==4&&this.status==200){
     db=JSON.parse(this.responseText);
-    console.log(db);
+    //For Debugging DB
+    //console.log(db);
     loadpage();
   }
 };
