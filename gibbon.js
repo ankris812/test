@@ -134,7 +134,7 @@ function savepage(){
   var type=document.getElementById("gibbontype").value;
   var include="true";
   var pat=document.getElementById("gibbonpat").value;
-  var args={"path":"db.json","message":"Updated from Gibbon CMS","content":btoa(db),"sha":sha};
+  var args={"path":"db.json","message":"Updated from Gibbon CMS","content":btoa(JSON.stringify(db)),"sha":sha};
   var url="https://api.github.com/repos/"+db.user+"/"+db.repo+"/contents/db.json?access_token="+pat;
 
   savedb.open("PUT",url,true);
