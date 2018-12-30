@@ -165,6 +165,9 @@ function loadpage(){
 
 function selectPage(key){
   document.getElementById("gibbontitle").value=db.pages[key].title;
+  document.getElementById("gibboncontent").value=db.pages[key].content;
+  document.getElementById("gibbontype").value=db.pages[key].type;
+
 }
 
 
