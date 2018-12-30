@@ -173,7 +173,7 @@ function savepage(){
   var pat=document.getElementById("gibbonpat").value;
 
   db.pages[page]={};
-  db.pages[page].title=page;
+  db.pages[page].title=title;
   db.pages[page].content=content;
   db.pages[page].date=today;
   db.pages[page].type=type;
@@ -184,7 +184,7 @@ function savepage(){
 
   savedb.open("PUT",url,true);
   savedb.send(JSON.stringify(args));
-  window.open("/?success");
+  window.open("/"+db.repo+"/?success");
 }
 
 function uploadmedia(){
