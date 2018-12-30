@@ -16,7 +16,7 @@ savedb.onreadystatechange=function(){
 var getsha=new XMLHttpRequest();
   getsha.onreadystatechange=function() {
   if(this.readyState==4&&this.status==200){
-			sha=this.responseText.sha;
+			sha=JSON.parse(this.responseText)["sha"];
    }
 };
 
@@ -31,6 +31,7 @@ function loadpage(){
 	 document.title=db.title;
   if(page=="admin"){
  			var url="https://api.github.com/repos/"+db.user+"/"+db.repo+"/contents/db.json";
+
 	 		getsha.open("GET",url, true);
   		getsha.send();
 
