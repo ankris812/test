@@ -134,6 +134,14 @@ function savepage(){
   var type=document.getElementById("gibbontype").value;
   var include="true";
   var pat=document.getElementById("gibbonpat").value;
+
+  db.pages[page]={};
+  db.pages[page].title=page;
+  db.pages[page].content=content;
+  db.pages[page].date=today;
+  db.pages[page].type=type;
+  db.pages[page].include=include;
+	
   var args={"path":"db.json","message":"Updated from Gibbon CMS","content":btoa(JSON.stringify(db)),"sha":sha};
   var url="https://api.github.com/repos/"+db.user+"/"+db.repo+"/contents/db.json?access_token="+pat;
 
