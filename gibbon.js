@@ -19,7 +19,7 @@ var getsha=new XMLHttpRequest();
 			sha=this.responseText.sha;
    }
 };
-  
+
 var page=window.location.search.slice(1);
 if(page==""){
   page="index";
@@ -30,10 +30,10 @@ getdb.send();
 function loadpage(){
 	 document.title=db.title;
   if(page=="admin"){
- 			var url="https://api.github.com/repos/"+db.user+"/"+db.repo+"/contents/db.json;
+ 			var url="https://api.github.com/repos/"+db.user+"/"+db.repo+"/contents/db.json";
 	 		getsha.open("GET",url, true);
   		getsha.send();
- 
+
     var c=document.getElementsByClassName("site-title");
     for(var i=0;i<c.length;i++){
       c[i].innerHTML=db.title;
@@ -118,13 +118,13 @@ function savepage(){
   var id=title.replace(/\s+/g,'-').toLowerCase();
   var today = new Date();
   var dd=today.getDate();
-  var mm=today.getMonth()+1; //January is 0!
+  var mm=today.getMonth()+1;
   var yyyy=today.getFullYear();
   if(dd<10){
     dd='0'+dd;
   }
-  if(mm<10){
     mm='0'+mm;
+    if(mm<10){
   }
   today = mm + '/' + dd + '/' + yyyy;
   var page=document.getElementById("gibbontitle").value;
@@ -132,7 +132,7 @@ function savepage(){
   var type=document.getElementById("gibbontype").value;
   var include="true";
   var pat=document.getElementById("gibbonpat").value;
-  var args={"path":"db.json","message":"Updated from Gibbon CMS","content","sha":sha};
+  var args={"path":"db.json","message":"Updated from Gibbon CMS","content":btoa(db),"sha":sha};
   var url="https://api.github.com/repos/"+db.user+"/"+db.repo+"/contents/db.json?access_token="+pat;
 
   savedb.open("PUT",url,true);
