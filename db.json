@@ -1,1 +1,1 @@
-[object Object]
+{"title":"Gibbon CMS","user":"zakerytclarke","repo":"gibboncms","pages":{"index":{"title":"Page Title","content":"Hello World!","date":"01/01/2000","type":"page","include":"true"},"test":{"title":"Test","content":"Hello World!","date":"01/01/2000","type":"blog","include":"false"},"blogsample":{"title":"Blog Post","content":"Hello World! Blog it.","date":"01/01/2000","type":"blog","include":"false"}}}
