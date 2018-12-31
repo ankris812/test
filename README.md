@@ -24,21 +24,21 @@ To change your sites theme, upload your source files and an index.html file into
 ## Theme Development
 
 Almost any HTML/CSS theme can be converted into a Gibbon Theme easily. They simply need to follow the format outlined in the [https://zakerytclarke.github.io/gibboncms/themes/bare/bare.html](https://zakerytclarke.github.io/gibboncms/themes/bare/bare.html)
-`
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;
-&lt;/title&gt;
-&lt;style&gt;
-&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;h1 class=&quot;site-title&quot;&gt;&lt;/h1&gt;
-&lt;div class=&quot;menu&quot;&gt;&lt;/div&gt;
-&lt;h2 class=&quot;title&quot;&gt;&lt;/h2&gt;
-&lt;p class=&quot;date&quot;&gt;&lt;/p&gt;
-&lt;div class=&quot;content&quot;&gt;&lt;/div&gt;
-&lt;script src=&quot;gibbon.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-`
+```
+<html>
+<head>
+<title>
+</title>
+<style>
+</style>
+</head>
+<body>
+<h1 class="site-title"></h1>
+<div class="menu"></div>
+<h2 class="title"></h2>
+<p class="date"></p>
+<div class="content"></div>
+<script src="gibbon.js"></script>
+</body>
+</html>
+```
