@@ -33,6 +33,8 @@ Becuase Gibbon CMS is completely serverless and has many restrictions created by
 
 `https://yoursite.com?error`     Error Page
 
+`https://yoursite.com?success`     Success Page
+
 Additionally, if your try to access a page that doesn't exist, Gibbon will automatically provide a 404 error.
 
 
