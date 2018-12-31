@@ -24,11 +24,13 @@ Visit [https://zakerytclarke.github.io/gibboncms/?install](https://zakerytclarke
 ## Url Scheme
 
 Becuase Gibbon CMS is completely serverless and has many restrictions created by Github Pages, Gibbon has a different page addressing scheme. To visit a page, use the following URL format:
+
 `https://yoursite.com?page`
 
 ### Reserved URLS
 
 `https://yoursite.com?admin`     Admin Panel
+
 `https://yoursite.com?error`     Error Page
 
 Additionally, if your try to access a page that doesn't exist, Gibbon will automatically provide a 404 error.
@@ -71,9 +73,13 @@ Almost any HTML/CSS theme can be converted into a Gibbon Theme easily. They simp
 The reserved CSS Classes are as follows:
 
 `site-title`     The location to insert the site title
+
 `menu`           The location to insert the site menu 
+
 `title`          The location to insert the page's title
+
 `date`           The location to insert the date the page was last edited
+
 `content`        The location to insert the page's content
 
 You can have as many elements with these respective classes as you desire, and the respective content will be inserted into all of them upon page render.
