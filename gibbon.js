@@ -5,7 +5,7 @@
  */
 
 
-console.log("Gibbon CMS V1.0");
+console.log("Gibbon CMS V1.0.1");
 var sha="";
 var getdb=new XMLHttpRequest();
 getdb.onreadystatechange=function(){
@@ -260,7 +260,7 @@ function savepage(){
   db.pages[id].include=include;
 
   if(type=="delete"){
-    db.pages[page]={};
+    db.pages[id]={};
   }
 
   var args={"path":"db.json","message":"Updated from Gibbon CMS","content":btoa(JSON.stringify(db)),"sha":sha};
