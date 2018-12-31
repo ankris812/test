@@ -16,8 +16,29 @@ Another strong motivator was to create a very bare-bones CMS that has themes tha
 
 Visit [https://zakerytclarke.github.io/gibboncms/?install](https://zakerytclarke.github.io/gibboncms/?install)
 
-
+## Change Theme
+To change your sites theme, upload your source files and an index.html file into the root of your repository.
 
 ## Editing Content
 
 ## Theme Development
+
+Almost any HTML/CSS theme can be converted into a Gibbon Theme easily. They simply need to follow the format outlined in the [https://zakerytclarke.github.io/gibboncms/themes/bare/bare.html](https://zakerytclarke.github.io/gibboncms/themes/bare/bare.html)
+`
+<html>
+<head>
+<title>
+</title>
+<style>
+</style>
+</head>
+<body>
+<h1 class="site-title"></h1>
+<div class="menu"></div>
+<h2 class="title"></h2>
+<p class="date"></p>
+<div class="content"></div>
+<script src="gibbon.js"></script>
+</body>
+</html>
+`
