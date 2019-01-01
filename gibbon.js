@@ -5,7 +5,7 @@
  */
 
 
-console.log("Gibbon CMS V1.0.1");
+console.log("Gibbon CMS V1.0.2");
 var sha="";
 var getdb=new XMLHttpRequest();
 getdb.onreadystatechange=function(){
