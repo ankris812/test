@@ -261,6 +261,7 @@ function savepage(){
 
   if(type=="delete"){
     db.pages[id]={};
+    delete db.pages[id];
   }
 
   var args={"path":"db.json","message":"Updated from Gibbon CMS","content":btoa(JSON.stringify(db)),"sha":sha};
@@ -268,7 +269,7 @@ function savepage(){
 
   savedb.open("PUT",url,true);
   savedb.send(JSON.stringify(args));
-  window.open("/"+db.repo+"/?success");
+  window.location.href="/"+db.repo+"/?success";
 }
 
 function uploadmedia(){
