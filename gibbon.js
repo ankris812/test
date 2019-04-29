@@ -19,7 +19,7 @@ var getpage=new XMLHttpRequest();
 		var html = converter.makeHtml(md);
     var locs = document.getElementsByClassName("content");
 		for(var i=0;i<locs.length;i++){
-      locs[i].innerHTML=md;
+      locs[i].innerHTML=html;
     }
 };
 
