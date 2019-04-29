@@ -1,6 +1,6 @@
 /**
  * Gibbon CMS
- * V1.0.5
+ * V2.0.2
  *
  */
 
@@ -11,9 +11,9 @@ var getpage=new XMLHttpRequest();
   getpage.onreadystatechange=function() {
   var md;
   if(this.readyState == 4 && this.status == 200){
-			md = this.responseText;
+		md = this.responseText;
    }else{
-   	md="# 404 Error";
+   	md = "# 404 Error \n You have visited this page in error";
    }
    var converter = new showdown.Converter();
 		var html = converter.makeHtml(md);
@@ -28,6 +28,5 @@ if(page==""){
   page="index";
 }
 
-
-getpage.open("GET",page+".md",true);
+getpage.open("GET","./pages/"+page+".md",true);
 getpage.send();
